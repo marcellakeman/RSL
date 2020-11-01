@@ -1,3 +1,2 @@
 # Movie recommender system
-This is a school project about a recommender system. In the code I've selected my favourite movie (Interstellar), and the recommender system gives recommendations about movies which I should watch next. The recommendations are made based on the summary, title and the starring of the movie.
-# RecSystem
+The movie recommendation system containt of 4 codes. One written in SQL and one in Python. The codes in SQL make predictions about which movie I should watch next after selecting my favourite movie: The Lord of the Rings the Return of the King. The code compares the Summary, Title or Starring field to filter out the movies that the viewer should watch next.

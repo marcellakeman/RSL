@@ -1,0 +1,18 @@
+#Movie recommendations
+
+#Sql
+
+Summary
+In the top 10 recommendations by using the column summary are the movies The Hobbit. This makes sense, because both movies come from story's written by the same author.
+Also, the storyline is a bit similar.
+
+Title
+When using the title column, it gives just two recommendations. The Lord of the Rings the Fellowship of the Ring & The Lord of the Rings the Two Towers.
+
+Starring
+When using the starring column, the movies from the Hobbit are also shown, this is because some actors are in both the hobbit and the lord of the rings (Ian Mckellen & Orlando Bloom).
+Also, all the movies from the pirates of the carribean are in this list. This is because Orlando Bloom plays in both of the movies.
+
+Python
+The recommendations from the python code are a bit different, and I also don't know all the movies that are in this list (only Django Unchained).
+The Social Network however is twice in the top 11, this should be a good movie. 

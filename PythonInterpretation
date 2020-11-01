@@ -1,0 +1,8 @@
+Python interpretation
+
+The Python code first creates a subset where the movie title is The Lord of the Rings the Return of the King. 
+All the reviewers (author's) are in this subset. 
+The Metascore that has been given should be a 7 at least, so the reviewer liked the movie. 
+All the reviewers are compared to the larger dataset, and a third dataset is made, where the reviewers gave a higher Metascore to another movie in the larger dataset.
+This dataset is then sorted by the increased Metascore, and the higher the increased Metascore is, the better the recommendation.
+The output is a csv file with 691 movie recommendations.

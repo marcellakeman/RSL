@@ -1,13 +1,13 @@
 -- This code is written by Marcel Lakeman 500694128
 
-pwd
-ls
-mkdir RSL
-cd RSL
-psql test
+-- pwd
+-- ls
+-- mkdir RSL
+-- cd RSL
+-- psql test
 
 -- Create table
-CREATE TABLE movies(
+CREATE TABLE IF NOT EXISTS movies(
 url text,
 title text,
 ReleaseDate text,
@@ -30,7 +30,7 @@ SELECT url FROM movies where url LIKE '%the-lord-of-the-rings%';
 
 -- Add TS vector
 ALTER TABLE movies
-ADD lexemestitle tsvector;
+ADD IF NOT EXISTS lexemestitle tsvector;
 
 UPDATE movies
 SET lexemestitle = to_tsvector(title);
@@ -40,7 +40,7 @@ SELECT url FROM movies
 WHERE lexemestitle @@ to_tsquery('the-lord-of-the-rings');
 
 ALTER TABLE movies
-ADD rank float4;
+ADD IF NOT EXISTS rank float4;
 
 UPDATE movies
 SET rank = ts_rank(to_tsvector(title), plainto_tsquery(
@@ -51,7 +51,7 @@ SELECT title FROM movies WHERE url = 'the-lord-of-the-rings-the-return-of-the-ki
 
 -- Create table with recommendations
 CREATE TABLE IF NOT EXISTS recommendationsBasedonTitleFieldLOTR3 AS
-SELECT url, rank FROM movies WHERE rank > 0.0001 ORDER BY rank DESC LIMIT 50;
+SELECT url, rank FROM movies WHERE rank > 0 ORDER BY rank DESC LIMIT 50;
 
 -- Copy recommendations into a csv file
 \copy (SELECT * FROM recommendationsBasedonTitleFieldLOTR3) to '/home/pi/RSL/top50recommendationsLOTR3Title.csv' WITH csv;
